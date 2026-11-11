@@ -206,7 +206,7 @@ RSpec.describe "Concord sidebar" do
     channel.add(admin)
 
     visit("/chat/c/#{channel.slug}/#{channel.id}/info/settings")
-    expect(page).to have_css(".c-channel-settings__auto-join-switch")
+    expect(page).to have_css(".c-channel-settings__danger-zone")
     expect(page).to have_no_css(".c-channel-settings .delete-btn")
 
     # A channel on a category of its own keeps chat's delete.
