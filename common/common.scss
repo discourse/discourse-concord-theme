@@ -8,6 +8,10 @@
   padding-left: 0;
 }
 
+body.has-sidebar-page .wrap {
+  max-width: unset;
+}
+
 // The channel list: quiet grey rows that light up when there's
 // something new, with a pill on the left edge marking unread channels.
 .sidebar-section[data-section-name^="concord-"] {
@@ -191,7 +195,7 @@
 
   .form-kit__control-radio-title {
     display: flex;
-    gap: 0.5em;
+    gap: 0.25em;
     align-items: center;
     font-weight: 600;
 
