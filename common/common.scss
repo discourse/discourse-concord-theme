@@ -755,6 +755,15 @@ body.concord-backed-channel
 }
 
 // The user menu normally hangs off the header, so it's absolutely placed.
+// The user panel sits in the fixed sidebar, so its menus are placed against
+// the viewport. Fixed from the first frame, too: core's user menu focuses its
+// active tab as soon as it renders, before float-kit has placed it, and a menu
+// still at the top of the document would scroll the page up to it.
+.fk-d-menu[data-identifier="concord-user-menu"],
+.fk-d-menu[data-identifier="concord-profile-menu"] {
+  position: fixed;
+}
+
 .concord-user-menu .user-menu.revamped,
 .concord-profile-menu .user-menu.revamped {
   position: static;
