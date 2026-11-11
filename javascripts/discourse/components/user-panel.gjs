@@ -46,6 +46,7 @@ export default class UserPanel extends Component {
   openUserMenu(event) {
     this.menu.show(event.currentTarget, {
       identifier: "concord-user-menu",
+      strategy: "fixed",
       component: UserMenuPopover,
       placement: "top-start",
       modalForMobile: true,
@@ -56,6 +57,7 @@ export default class UserPanel extends Component {
   openProfileMenu(event) {
     this.menu.show(event.currentTarget, {
       identifier: "concord-profile-menu",
+      strategy: "fixed",
       component: ProfileMenuPopover,
       placement: "top-end",
       modalForMobile: true,

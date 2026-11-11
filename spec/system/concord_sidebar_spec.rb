@@ -206,7 +206,7 @@ RSpec.describe "Concord sidebar" do
     channel.add(admin)
 
     visit("/chat/c/#{channel.slug}/#{channel.id}/info/settings")
-    expect(page).to have_css(".c-channel-settings__auto-join-switch")
+    expect(page).to have_css(".c-channel-settings__danger-zone")
     expect(page).to have_no_css(".c-channel-settings .delete-btn")
 
     # A channel on a category of its own keeps chat's delete.
@@ -1533,7 +1533,12 @@ RSpec.describe "Concord sidebar" do
       expect(page).to have_no_css(".concord-member-list")
       find(".concord-channel-header [data-action-id='member-list']").click
       list = find(".concord-member-list.--slide-in")
-      expect(list).to have_css(".concord-member-list__member[data-username='#{admin.username}']")
+      # Members load before chat's presence does, so admin is listed offline
+      # first and then re-rendered among the online; wait for that, or the
+      # click below can land on the row being replaced.
+      expect(list).to have_css(
+        ".concord-member-list__member:not(.--offline)[data-username='#{admin.username}']",
+      )
       expect(page).to have_no_css("body.concord-member-list-open")
       sleep 0.5 if ENV["DCCK_SCREENSHOTS"]
       screenshot("mobile-member-list")
