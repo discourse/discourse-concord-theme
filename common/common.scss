@@ -1,5 +1,17 @@
 @use "lib/viewport";
 
+#main-outlet-wrapper.wrap {
+  margin: 0;
+}
+
+.sidebar-wrapper .sidebar-sections {
+  padding-left: 0;
+}
+
+body.has-sidebar-page .wrap {
+  max-width: unset;
+}
+
 // The channel list: quiet grey rows that light up when there's
 // something new, with a pill on the left edge marking unread channels.
 .sidebar-section[data-section-name^="concord-"] {
@@ -183,7 +195,7 @@
 
   .form-kit__control-radio-title {
     display: flex;
-    gap: 0.5em;
+    gap: 0.25em;
     align-items: center;
     font-weight: 600;
 
@@ -743,6 +755,15 @@ body.concord-backed-channel
 }
 
 // The user menu normally hangs off the header, so it's absolutely placed.
+// The user panel sits in the fixed sidebar, so its menus are placed against
+// the viewport. Fixed from the first frame, too: core's user menu focuses its
+// active tab as soon as it renders, before float-kit has placed it, and a menu
+// still at the top of the document would scroll the page up to it.
+.fk-d-menu[data-identifier="concord-user-menu"],
+.fk-d-menu[data-identifier="concord-profile-menu"] {
+  position: fixed;
+}
+
 .concord-user-menu .user-menu.revamped,
 .concord-profile-menu .user-menu.revamped {
   position: static;
