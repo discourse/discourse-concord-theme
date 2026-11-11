@@ -1,5 +1,13 @@
 @use "lib/viewport";
 
+#main-outlet-wrapper.wrap {
+  margin: 0;
+}
+
+.sidebar-wrapper .sidebar-sections {
+  padding-left: 0;
+}
+
 // The channel list: quiet grey rows that light up when there's
 // something new, with a pill on the left edge marking unread channels.
 .sidebar-section[data-section-name^="concord-"] {
@@ -956,3 +964,4 @@ body.concord-topic {
 .concord-channel-privacy-modal__shared {
   margin-top: 0;
 }
+
