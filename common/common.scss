@@ -424,7 +424,7 @@ body.concord-header .d-header > .wrap {
 // list, which takes the category too; chat's own delete would leave it behind.
 body.concord-backed-channel
   .c-channel-settings
-  .c-channel-settings__danger-action:has(.delete-btn) {
+  :is(.chat-form__row, .c-channel-settings__danger-action):has(.delete-btn) {
   display: none;
 }
 
