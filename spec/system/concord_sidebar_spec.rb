@@ -1239,7 +1239,6 @@ RSpec.describe "Concord sidebar" do
       SiteSetting.default_locale = "en"
       SiteSetting.content_localization_supported_locales = "es|ja"
       SiteSetting.content_localization_enabled = true
-      SiteSetting.allow_user_locale = true
     end
 
     it "shows core's switcher left of the header buttons, when core would" do
