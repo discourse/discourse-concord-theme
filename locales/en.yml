@@ -1,4 +1,5 @@
 en:
+  deprecation_notice: 'Concord is now included with Discourse. Switch to the <a href="%{url}">built-in Concord theme</a> before uninstalling this copy.'
   theme_metadata:
     description: "Replaces the sidebar with a single channel list made of categories, chat channels and voice rooms."
     settings:
