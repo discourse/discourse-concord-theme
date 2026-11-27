@@ -1,5 +1,17 @@
 # Concord
 
+> [!IMPORTANT]
+> We're deprecating this standalone theme as Concord moves into Discourse. Once
+> you see the built-in Concord theme in **Admin → Appearance → Themes**, use
+> that copy. Until then, keep using this one.
+>
+> The upgrade copies your changed Concord settings once, including your sidebar
+> sections. Before uninstalling this copy, check the built-in theme's settings,
+> attach any components you use, and select your colour palettes. If Concord
+> is your default theme, set the built-in copy as the default first. If you
+> offer Concord as an optional theme, make the built-in copy selectable and
+> let members who chose Concord know they'll need to select it again.
+
 A theme that turns Discourse into a chat server, where everything is a channel.
 
 It replaces the sidebar with one section where everything is a channel:
